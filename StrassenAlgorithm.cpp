@@ -23,7 +23,7 @@ void MatrixSubtrac(double **A, double **B, double **Result, int N);
 void StrassenAlgorithm(double **A, double **B, double **C, int N);
 
 
-
+/* For taking input from standard input(keyboard)*/
 void ReadMatrix(double A[][SIZE],int N)
 {
     int i,j;
@@ -37,7 +37,7 @@ void ReadMatrix(double A[][SIZE],int N)
     }
 }
 
-
+/*For printing the matrix in standard output(console)*/
 void WriteMatrix(double A[][SIZE], int N)
 {
     int i, j;
@@ -52,6 +52,7 @@ void WriteMatrix(double A[][SIZE], int N)
     }
 }
 
+/*This function will add two square matrix*/
 void MatrixAdd(double A[][SIZE], double B[][SIZE], double Result[][SIZE], int N)
 {
     int i, j;
@@ -66,7 +67,7 @@ void MatrixAdd(double A[][SIZE], double B[][SIZE], double Result[][SIZE], int N)
 
 }
 
-
+/*This function will subtract one  square matrix from another*/
 void MatrixSubtrac(double A[][SIZE], double B[][SIZE], double Result[][SIZE], int N)
 {
     int i, j;
@@ -81,7 +82,7 @@ void MatrixSubtrac(double A[][SIZE], double B[][SIZE], double Result[][SIZE], in
 }
 
 
-
+/*This is the strassen algorithm. (Divide and Conqure)*/
 void StrassenAlgorithm(double A[][SIZE], double B[][SIZE], double C[][SIZE], int N)
 {
     // trivial case: when the matrice is 1 X 1:
@@ -122,6 +123,7 @@ void StrassenAlgorithm(double A[][SIZE], double B[][SIZE], double C[][SIZE], int
         }
 
         // Calculating p1 to p7:
+        /*For details -- Introduction to Algorithms 3rd Edition by CLRS*/
 
         MatrixAdd(A11, A22, AResult, Divide);   // a11 + a22
         MatrixAdd(B11, B22, BResult, Divide);   // b11 + b22
@@ -178,7 +180,7 @@ void StrassenAlgorithm(double A[][SIZE], double B[][SIZE], double C[][SIZE], int
 
 }
 
-
+/*The main function*/
 int main()
 {
     double A[SIZE][SIZE], B[SIZE][SIZE], C[SIZE][SIZE];
@@ -224,7 +226,7 @@ int main()
         }
     }
 
-    StrassenAlgorithm(A,B,C,N);
+    StrassenAlgorithm(A,B,C,N); // StrassenAlgorithm called here
 
     printf("Matrix A:\n\n");
     WriteMatrix(A,M);
